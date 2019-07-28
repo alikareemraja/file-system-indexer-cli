@@ -1,7 +1,5 @@
 import Indexer.Indexer;
 import Indexer.Util.AnalyzerEnum;
-import Indexer.Util.FieldEnum;
-import Indexer.Util.Util;
 import org.apache.lucene.document.Document;
 
 import java.util.List;
@@ -43,9 +41,9 @@ public class CLITool {
                 }
             }
 
-            System.out.println("Would you like to make another query?:");
+            System.out.println("Would you like to make another query? Please Y:");
             String cont = scanner.nextLine();
-            if(cont != "Y"){
+            if(!cont.equalsIgnoreCase("Y")){
                 _indexer.closeIndexer();
                 return;
             }
